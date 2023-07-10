@@ -1,0 +1,138 @@
+/* Reset some default styles */
+body, header, nav, main, aside, section, article, footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Basic layout styles */
+  header {
+    background-color: #150c38;
+    color: #fff;
+    padding: 20px;
+    width:100%;
+    height:50px;
+    display: flex;
+  align-items: center;
+  padding: 10px;
+  }
+
+/* .trs{
+
+    font-size:10px;font-family:Times;color:#ffffff; margin-left:58%;
+
+  }*/
+
+
+
+
+
+  .logo {
+    margin-right: 10px;
+
+  }
+
+  .logo img {
+    max-height: 40px; /* Adjust the height as needed */
+  }
+
+
+  nav {
+
+    text-align:center;
+
+  }
+
+  nav h1{
+    font-size: 40px;
+    font-style:inherit;
+  }
+
+
+  .content p{
+    font-size: 20px;
+    margin-top:20px ;
+
+  }
+  .content span{
+    color:red;
+  }
+
+.ft18{
+
+  font-size:25px;font-family:Times;color:#c37d3e;
+}
+.ft19{
+
+  position:absolute;top:340px;left:77px;
+  font-size:20px;font-family:Times;color:#231f20;
+
+}
+.ft110{font-size:25px;font-family:Times;color:#272525;
+  position:absolute;top:420px;left:77px;
+
+}
+.ft111{font-size:17px;font-family:Times;color:#201c1c;}
+
+
+	.ft112{font-size:17px;line-height:35px;font-family:Times;color:#201c1c;
+
+  }
+  .ft11{font-size:43px;font-family:Times;color:#241d1a;}
+
+  .ft21{font-size:16px;font-family:Times;color:#575b5c;}
+
+  .ft16{font-size:25px;font-family:Times;color:#ffffff;}
+	.ft17{font-size:20px;font-family:Times;color:#ffffff;}
+
+  .ft20{font-size:43px;font-family:Times;color:#241d1a;}
+
+
+  main {
+    display: flex;
+  }
+
+  aside {
+    flex-basis: 80%;
+
+    padding: 20px;
+  }
+
+  section {
+    flex-basis: 20%;
+    padding: 20px;
+  }
+
+  article {
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background-color: #150c38;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+
+  .deli{
+
+    position:absolute;top:500px;left:-430px;
+  }
+
+  .img1{
+   width: 275px;
+   height: 175px;
+   border: 5px solid black;
+
+  }
+
+footer{
+
+  display: flex;
+}
+.fot{
+
+  margin:10px;
+  margin-left: 70px;
+
+}

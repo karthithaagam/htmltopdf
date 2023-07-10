@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Webpage Layout</title>
+<!--  <link rel="stylesheet" type="text/css" href="styles.css">-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+  <header class="container-fluad ">
+    <div class="row">
+      <div class="col-3">
+        <img src="{% static 'images/thaagam.png' %}" alt="Logo">
+      </div>
+      <div class="col-6 ">
+
+      </div>
+      <div class="col-3 text-start fw-bold">
+        <p class="ft16 my-3 ">100%&#160;</p>
+        <p  class="ft17 my-2" style="text-align:center;" >TRANSPARENT</p>
+      </div>
+     </div>
+
+  </header>
+  <main class=" my-5 text-center">
+      <div>
+    <h1>Donation Delivery Report</h1>
+      <div class="content">
+        <p>Your Generous Contribution of 25 meals in the  ame  of <span>indrakanti praveen kumar </span> was served on  <span>28.08.2018</span>  To homeless and poverty-stricken people.</p>
+      </div>
+    </div>
+  </main>
+
+  <section class="my-5 text-center" style="margin:20px;">
+  <div class="row">
+    <div class=" text-center col-4">
+        <p style="font-size:20px" class="ft11"><b>Food Served</b></p>
+      <div class=" text-center">
+          <p style="position:absolute;top:340px;left:77px;white-space:nowrap" class="ft19"><b>Estimated Nutrition value : </b></p>
+          <p style="position:absolute;top:370px;left:77px;white-space:nowrap" class="ft110"><b>Carbohydrates </b>           :</p>
+          <p style="position:absolute;top:400px;left:77px;white-space:nowrap" class="ft110"><b>Protien    </b>              :</p>
+          <p style="position:absolute;top:435px;left:77px;white-space:nowrap" class="ft110"><b>Total meal weight     </b>   :</p>
+          <p style="position:absolute;top:372px;left:345px;white-space:nowrap" class="ft112">250g<br/>120g</p>
+          <p style="position:absolute;top:435px;left:346px;white-space:nowrap" class="ft111">450g</p>
+      </div>
+    </div>
+    <div class="col-2">
+
+    </div>
+    <div class="col-4">
+      <img src="{% static 'images/homeless.png' %}"  class=" my-5 mx-5" style="width:300px; radius: 5px;">
+    </div>
+  </div>
+  </section>
+    <section class="my-3">
+      <div class="container my-3">
+        <div class="row">
+          <h3 class="text-center"><b>Food Department </b>
+          </h3>
+          <div class="col-6 my-3" >
+            <p class="small ml-4">Our food department offers a wide range of delicious and nutritious options to satisfy your cravings. From fresh produce to gourmet treats, we have something for everyone.   Whether you're looking for a quick bite or a gourmet dining experience, our food department has got you covered. Come and explore our culinary delights today!</p>
+          </div>
+          <div class="col-6 my-3">
+            <img src="{% static 'images/department.jpg' %}" alt="food department"  class=" my-2 mx-2" style="width:400;">
+          </div>
+        </div>
+      </div>
+
+  </section>
+  <section>
+    <div class="container">
+      <h3 class="text-center">Transport Department</h3>
+      <p class="small">Our food transport department ensures timely and efficient delivery of fresh and perishable goods to our valued customers. With a dedicated fleet of refrigerated vehicles and trained drivers, we prioritize food safety and quality during transportation. Our reliable and secure transport services guarantee that your food arrives in optimal condition, preserving its freshness and taste.</p>
+      <div class="row">
+        <div class="col-4">
+          <img src="{% static 'images/trans.jpeg' %}" alt="transport image" style="width: 350px; height: 350px;">
+        </div>
+        <div class="col-2">
+
+        </div>
+        <div class="col-4">
+          <img src="{% static 'images/trans1.jpeg' %}" alt="transport image" style="width: 350px; height: 350px;">
+        </div>
+
+      </div>
+    </div>
+    <div class="container my-4">
+       <h2 class="text-center">Receiving Images from Donor</h2>
+        <p>Thank you for your generous donation! In order to process your donation effectively, we kindly request you to provide the following images:</p>
+        <ul>
+            <li>A clear photo of the donated food items</li>
+            <li>A photo of the donation receipt or acknowledgment</li>
+        </ul>
+        <p>These images will help us ensure that the donation is recorded accurately and used for the intended purpose. We greatly appreciate your cooperation.</p>
+    </div>
+    </div>
+  </section>
+  <h3></h3>
+  <section>
+ <div class="container">
+    <div class="row">
+      {% for image in image %}
+      <div class="col-6 my-3">
+        <img src="{{ image }}" class="card-image-top" width="300" height="300" alt="Category">
+      </div>
+<!--    {% cycle '</div><div class="row">' '' %}-->
+    {% endfor %}
+      </div>
+    </div>
+</div>
+  </section>
+<!--<div class="row ">-->
+<!--  <button class="text-center " onclick="window.print()">Print this page</button>-->
+<!--</div>-->
+
+<section class=" my-3 bottom">
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h4>About Us</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor velit a massa condimentum, in sollicitudin sapien euismod.</p>
+        </div>
+
+        <div class="col-6">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 6,dhanamal street, chetpet, chennai</li>
+            <li><i class="fas fa-envelope"></i> thaagam.org </li>
+            <li><i class="fas fa-phone"></i> +1234567890</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</section>
+
+</body>
+</html>
+<div>
+
+</div>
