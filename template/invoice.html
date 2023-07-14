@@ -1,107 +1,82 @@
-<!DOCTYPE html>
-{% load static %}
 <html>
+
 <head>
-  <title>Webpage Layout</title>
+{% load static %}
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+.DDR_header{
+  font-size:32px;
+  text-align:center;
+  font-family:Sans-serif;
+  }
+.donation_para{
+  font-size:20px;
+  font-family:Monospace;
+  text-align:justify;
+}
+.nani{
+  font-size:32px;
+  text-align:center;
+  font-family:Verdana;
+}
+.greetings3{
+  font-size:18px;
+  font-family:Monospace;
+  text-align:justify;
+}
+.food_qty{
+  font-size:20px;
+  font-family:Monospace;
+}
+
+
+
+</style>
+
+
 </head>
+
 <body>
-  <header style="display: flex; flex-direction: row;">
-    <div style="width: 33.33%;">
-      <img src='thaagam.png' alt="Logo">
-    </div>
-    <div style="width: 33.33%;"></div>
-    <div style="width: 33.33%; text-align: start; font-weight: bold;">
-      <p style="font-size: 16px; margin-top: 10px;">100%&#160;</p>
-      <p style="font-size: 17px; text-align: center; margin-top: 5px;">TRANSPARENT</p>
-    </div>
-  </header>
-  <main style="margin-top: 50px; text-align: center;">
-    <div>
-      <h1>Donation Delivery Report</h1>
-      <div class="content">
-        <p>Your Generous Contribution of 25 meals in the name of <span>indrakanti praveen kumar</span> was served on <span>28.08.2018</span> To homeless and poverty-stricken people.</p>
+
+<section>
+      {% for image in products %}
+        <img src="{{ image.image.path }}" class="card-image-top"  alt="Category">
+      {% endfor %}
+</section>
+
+ <h1 class="DDR_header" >Donation Delivery Report</h1>
+<p class="donation_para" id="donation_para"> <b>We are delighted to report that your generous donation of <span class="donation_para_colour_change">{{meals}}</span>, on behalf of <span class="donation_para_colour_change">{{name}}</span>, was successfully delivered on <span class="donation_para_colour_change">{{date}}</span>. This thoughtful contribution provided much-needed sustenance to homeless and poverty-stricken communities in india.</b></p>
+   <div class="thanks">
+            <h1 class="nani">Special Note of Thanks</h1>
+            <h6 class="greetings3">Our gratitude for your generosity knows is limitless. You are the pillars of the Thaagam Foundation, the force that propels us forward. Your contributions have been the backbone of our operations, the heart that keeps us going. Every meal we provide, every hungry stomach we fill, it's all because of you. You are the reason we've been able to grow and touch so many lives across India. Without your support, none of this would be possible. You are not just donors, you are the very essence of Thaagam Foundation. Thank you, from our hearts to yours.</h6>
+   </div>
+<div>
+  <h2 class="DDR_header">How To We Served</h2>
+  <div class="food_qty">
+          <p style="line-height:1px" class="ft19"><b>Estimated Nutrition value : </b></p>
+          <p style="line-height:1px" class="ft110"><b>Carbohydrates            : 250g</b></p>
+          <p style="line-height:1px" class="ft110"><b>Protien                  : 120g</b></p>
+          <p style="line-height:1px" class="ft110"><b>Total meal weight        : 450g</b></p>
       </div>
     </div>
-  </main>
+</div>
 
-  <section style="margin: 20px;">
-    <div style="display: flex; flex-direction: row;">
-      <div style="width: 33.33%; text-align: center;">
-        <p style="font-size: 20px;"><b>Food Served</b></p>
-        <div style="text-align: center;">
-          <p style="position: absolute; top: 340px; left: 77px; white-space: nowrap;"><b>Estimated Nutrition value :</b></p>
-          <p style="position: absolute; top: 370px; left: 77px; white-space: nowrap;"><b>Carbohydrates :</b></p>
-          <p style="position: absolute; top: 400px; left: 77px; white-space: nowrap;"><b>Protien :</b></p>
-          <p style="position: absolute; top: 435px; left: 77px; white-space: nowrap;"><b>Total meal weight :</b></p>
-          <p style="position: absolute; top: 372px; left: 345px; white-space: nowrap;">250g<br/>120g</p>
-          <p style="position: absolute; top: 435px; left: 346px; white-space: nowrap;">450g</p>
-        </div>
-      </div>
-      <div style="width: 33.33%;"></div>
-      <div style="width: 33.33%; text-align: center;">
-        <img src="{% static 'images/homeless.png' %}" style="width: 300px; border-radius: 5px;">
-      </div>
+<section style="width: 100%;">
+  <div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">
+    {% for image in images %}
+    <div style="width:800px; height:800px;">
+      <img src="{{ image }}"   class="center" alt="donar">
     </div>
-  </section>
+    {% cycle '<div style="width: 50%;"></div>' '</div><div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">' %}
+    {% endfor %}
+  </div>
+</section>
 
-  <section>
-    <div style="margin: 20px;">
-      <h3 style="text-align: center;"><b>Food Department</b></h3>
-      <div style="display: flex; flex-direction: row;">
-        <div style="width: 50%;">
-          <p class="small" style="margin-left: 20px;">Our food department offers a wide range of delicious and nutritious options to satisfy your cravings. From fresh produce to gourmet treats, we have something for everyone. Whether you're looking for a quick bite or a gourmet dining experience, our food department has got you covered. Come and explore our culinary delights today!</p>
-        </div>
-        <div style="width: 50%;">
-          <img src="{% static 'images/department.jpg' %}" alt="food department" style="width: 400px; margin: 10px;">
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div style="margin: 20px;">
-      <h3 style="text-align: center;">Transport Department</h3>
-      <p class="small">Our food transport department ensures timely and efficient delivery of fresh and perishable goods to our valued customers. With a dedicated fleet of refrigerated vehicles and trained drivers, we prioritize food safety and quality during transportation. Our reliable and secure transport services guarantee that your food arrives in optimal condition, preserving its freshness and taste.</p>
-      <div style="display: flex; flex-direction: row;">
-        <div style="width: 33.33%;">
-          <img src="{% static 'images/trans.jpeg' %}" alt="transport image" style="width: 350px; height: 350px;">
-        </div>
-        <div style="width: 33.33%;"></div>
-        <div style="width: 33.33%;">
-          <img src="{% static 'images/trans1.jpeg' %}" alt="transport image" style="width: 350px; height: 350px;">
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div style="margin: 20px;">
-      <h2 style="text-align: center;">Receiving Images from Donor</h2>
-      <p>Thank you for your generous donation! In order to process your donation effectively, we kindly request you to provide the following images:</p>
-      <ul>
-        <li>A clear photo of the donated food items</li>
-        <li>A photo of the donation receipt or acknowledgment</li>
-      </ul>
-      <p>These images will help us ensure that the donation is recorded accurately and used for the intended purpose. We greatly appreciate your cooperation.</p>
-    </div>
-  </section>
 
-  <section>
-    <div style="margin: 20px;">
-      <div style="display: flex; flex-direction: row;">
-        {% for image in images %}
-        <div style="width: 50%;">
-          <img src="{{ image }}" style="width: 300px; height: 300px; margin: 10px;" alt="Category">
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
 
-  <section style="margin-top: 20px;">
-    <footer style="background-color: #f8f9fa; padding: 30px 0; color: #333;">
-      <div style="display: flex; flex-direction: row;">
-        <div style="width: 50%;">
-          <h4>About Us</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor velit a massa condimentum, in sollicitudin sapien euismod.</p>
-        </div>
+</body>
+
+</html>

@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from .views import GeneratePdf
-from .views import WebpageToPdfView
+#from .views import WebpageToPdfView
 
 urlpatterns = [
     path('',views.index,name='index'),
+    path('pisa',views.pdf_report,name='pisa_pdf'),
     path('pdf/', GeneratePdf.as_view(), name='generate_pdf'),
-     path('convert-webpage-to-pdf/', WebpageToPdfView.as_view(), name='convert-webpage-to-pdf'),
+
+    # path('spdf/', save_pdf, name='save_pdf'),
+   #path('convert-webpage-to-pdf/', WebpageToPdfView.as_view(), name='convert-webpage-to-pdf'),
 ]

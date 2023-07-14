@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pdfapp',
-    #'background_task',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +100,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# WKHTMLTOPDF_CMD = r'C:/Users/THAAGAM BOT PC-1/Desktop/django_projects/html_to_pdf/ad3-2.2.1-cp310-cp310-win_amd64.whl'  # Specify the path to the wkhtmltopdf binary
+# PDFKIT_OPTIONS = {
+#     'quiet': '',
+# }
 
 
 # Internationalization
@@ -115,23 +118,18 @@ USE_I18N = True
 USE_TZ = True
 
 
-WKHTMLTOPDF_PATH = "C:/Users/THAAGAM BOT PC-1/Desktop/django_projects/html_to_pdf/wkhtmltox-0.12.6-1.msvc2015-win64.exe"
+WKHTMLTOPDF_PATH = r"C:/Users/THAAGAM BOT PC-1/Desktop/django_projects/html_to_pdf/wkhtmltox-0.12.6-1.msvc2015-win64.exe"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-
-# settings.py
-
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
-
-# STATICFILES = os.path.join(BASE_DIR,'static')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

@@ -24,6 +24,7 @@
      </div>
 
   </header>
+
   <main class=" my-5 text-center">
       <div>
     <h1>Donation Delivery Report</h1>
@@ -101,11 +102,11 @@
   <section>
  <div class="container">
     <div class="row">
-      {% for image in image %}
+      {% for image in images %}
       <div class="col-6 my-3">
-        <img src="{{ image }}" class="card-image-top" width="300" height="300" alt="Category">
+        <img src="{{ image }}"  class="card-image-top" width="300" height="300" alt="donar">
       </div>
-<!--    {% cycle '</div><div class="row">' '' %}-->
+    {% cycle '</div><div class="row">' '' %}
     {% endfor %}
       </div>
     </div>
@@ -137,6 +138,36 @@
   </footer>
 
 </section>
+<script>
+  function printPage() {
+    window.print();
+  }
+
+  function savePrintOutput() {
+    // Send an AJAX request to your Django view to generate and save the PDF file
+    // Replace '/save-pdf/' with the actual URL of your Django view
+    $.ajax({
+      url: '/save-pdf/',
+      type: 'GET',
+      success: function(response) {
+        console.log('PDF file saved:', response);
+        // Perform any further actions with the PDF file path if needed
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        console.error('Error saving PDF file:', errorThrown);
+      }
+    });
+  }
+
+  window.onload = function() {
+    setTimeout(printPage, 10000); // Delay of 10 seconds (10000 milliseconds)
+  };
+
+  window.onafterprint = function() {
+    savePrintOutput();
+  };
+</script>
+
 
 </body>
 </html>
