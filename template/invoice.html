@@ -30,7 +30,13 @@
   font-family:Monospace;
 }
 
-
+.footer {
+    height:200px;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
 
 </style>
 
@@ -46,7 +52,7 @@
 </section>
 
  <h1 class="DDR_header" >Donation Delivery Report</h1>
-<p class="donation_para" id="donation_para"> <b>We are delighted to report that your generous donation of <span class="donation_para_colour_change">{{meals}}</span>, on behalf of <span class="donation_para_colour_change">{{name}}</span>, was successfully delivered on <span class="donation_para_colour_change">{{date}}</span>. This thoughtful contribution provided much-needed sustenance to homeless and poverty-stricken communities in india.</b></p>
+<p class="donation_para" id="donation_para"> <b>We are delighted to report that your generous donation of<span style="color:red"><b> {{ data.meals}}</b></span>, on behalf of <span style="color:red"><b>{{data.name}}</b></span>, was successfully delivered on <span style="color:red;"><b>{{data.date}} </b></span>. This thoughtful contribution provided much-needed sustenance to homeless and poverty-stricken communities in india.</b></p>
    <div class="thanks">
             <h1 class="nani">Special Note of Thanks</h1>
             <h6 class="greetings3">Our gratitude for your generosity knows is limitless. You are the pillars of the Thaagam Foundation, the force that propels us forward. Your contributions have been the backbone of our operations, the heart that keeps us going. Every meal we provide, every hungry stomach we fill, it's all because of you. You are the reason we've been able to grow and touch so many lives across India. Without your support, none of this would be possible. You are not just donors, you are the very essence of Thaagam Foundation. Thank you, from our hearts to yours.</h6>
@@ -62,20 +68,30 @@
     </div>
 </div>
 
-<section style="width: 100%;">
-  <div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">
-    {% for image in images %}
-    <div style="width:800px; height:800px;">
-      <img src="{{ image }}"   class="center" alt="donar">
+<!--<section style="width: 80%;">-->
+<!--  <div>-->
+<!--    {% for image in images %}-->
+<!--    <div>-->
+<!--      <img src="{{ image }}"  style="  text-align: center;  width:500px; height:500px; border-radius: 10px; margin-bottom: 15px;" class="center" alt="donar">-->
+<!--    </div>-->
+<!--    {% cycle '<div style="width: 50%;"></div>' '</div><div style="">' %}-->
+<!--    {% endfor %}-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<div class="footer">-->
+<!--    <h3>dgdfgsdfhgkhjsdfg dffghkdajhf</h3>-->
+<!--</div>-->
+
+<section>
+    <div>
+        {% for image in images %}
+        <div>
+            <img src="{{ image }}" style="text-align: center; border-radius: 10px;" class="center" alt="donar">
+        </div>
+        {% endfor %}
     </div>
-    {% cycle '<div style="width: 50%;"></div>' '</div><div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">' %}
-    {% endfor %}
-  </div>
 </section>
-
-
-
-
 
 </body>
 
